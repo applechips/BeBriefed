@@ -5,11 +5,13 @@ import {
 	StyleSheet,
 } from 'react-native'
 
+import StatusScreen from './StatusScreen'
+
 class MainContainer extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>BeBriefed App</Text>
+          <StatusScreen />
       </View>
     );
   }
