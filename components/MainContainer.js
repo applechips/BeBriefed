@@ -11,10 +11,15 @@ class MainContainer extends Component {
   render() {
     return (
       <View style={styles.container}>
-          <StatusScreen />
+          <StatusScreen isUp={this.props.isUp} lastUpTime={this.props.lastUpTime}/>
       </View>
-    );
+    )
   }
+}
+
+MainContainer.propTypes = {
+	isUp: PropTypes.bool.isRequired,
+	lastUpTime: PropTypes.instanceOf(Date),
 }
 
 const styles = StyleSheet.create({

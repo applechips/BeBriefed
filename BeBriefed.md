@@ -247,3 +247,81 @@ in StatusScreen.js
   <StatusIndicator isUp={this.props.isUp}/>
 	<Text style={styles.statusText}>Service {this.props.isUp ? 'Up' : 'Down!'}</Text>
 ```
+
+
+to add timestamp
+add constructor
+initialize state
+make new lastUpTime. equal to the date few minutes to the time
+in index.ios.js
+```
+constructor(props) {
+	super(props)
+
+	this.state = {
+		isUp: true,
+		lastUpTime: new Date((new Date()).getTime() - 5 * 60 * 1000),
+	}
+}
+```
+we want to put this lastUpTime in the StatusScreen so we add a prop for that.
+
+
+```
+StatusScreen.propTypes = {
+	isUp: PropTypes.bool.isRequired,
+	lastUpTime: PropTypes.instanceOf(Date),			<---------------------
+}
+```
+
+also in the MainContainer
+```
+
+MainContainer.propTypes = {
+	isUp: PropTypes.bool.isRequired,
+	lastUpTime: PropTypes.instanceOf(Date),
+}
+```
+we can now passing this all the way down in our index
+```js
+render() {
+	return (
+		<MainContainer isUp={this.state.isUp} lastUpTime={this.state.lastUpTime}/>
+	);
+}
+```
+
+delete
+const isUp = false
+
+
+refresh server
+
+in MainContainer.js, pass down the prop
+```
+class MainContainer extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+          <StatusScreen isUp={this.props.isUp} lastUpTime={this.props.lastUpTime}/>		<----------
+      </View>
+    )
+  }
+}
+
+```
+
+in StatusScreen.js
+
+i give up on these notes
+
+
+
+
+
+
+
+
+---------
+
+Moment.js
