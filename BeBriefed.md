@@ -343,4 +343,9 @@ sources > debuggerWorker.js
 
 			TO not FROM
 
-			
+---------
+
+react-native-tabs
+npm i --save react-native-tabs
+
+make TabBarComponent.js
