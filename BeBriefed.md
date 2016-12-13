@@ -325,3 +325,22 @@ i give up on these notes
 ---------
 
 Moment.js
+npm i --save moment
+
+in StatusScreen
+```
+import moment from 'moment'
+```
+
+debug
+cmd+d - remote debugging
+
+sources > debuggerWorker.js
+
+
+
+			const relativeTime = moment().to(this.props.lastUpTime)
+
+			TO not FROM
+
+			

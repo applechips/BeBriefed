@@ -4,14 +4,15 @@ import {
   Text,
 	StyleSheet,
 } from 'react-native'
-
+import moment from 'moment'
 import StatusIndicator from './StatusIndicator'
 
 class StatusScreen extends Component {
   render() {
 		let lastUpComponent
 		if (!this.props.isUp) {
-			lastUpComponent = <Text style={styles.lastUpText}>Last up: {this.props.lastUpTime.toString()}</Text>
+			const relativeTime = moment().to(this.props.lastUpTime)
+			lastUpComponent = <Text style={styles.lastUpText}>Last up: {relativeTime}</Text>
 		}
     return (
       <View style={styles.container}>
