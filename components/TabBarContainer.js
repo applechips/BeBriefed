@@ -8,12 +8,21 @@ import TabBarItem from './TabBarItem'
 
 
 const TabBarContainer = (props) => (
-  <Tabs style={styles.tabContainer}>
+  <Tabs
+		style={styles.tabContainer}
+		onSelect={comp=> {
+			props.onTabChange(comp.props.name)
+		}}
+	>
     <TabBarItem name="web" label="Web Server" icon="server">Web</TabBarItem>
     <TabBarItem name="db" label="DB Server" icon="database">DB</TabBarItem>
     <TabBarItem name="mail" label="Mail Server" icon="envelope-o">Mail</TabBarItem>
   </Tabs>
 )
+
+TabBarContainer.propTypes = {
+	onTabChange: PropTypes.func.isRequired
+}
 
 const styles = StyleSheet.create({
 	tabContainer: {
