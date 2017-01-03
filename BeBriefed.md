@@ -1,3 +1,10 @@
+conditonally applying styles to a component
+visually identifying the currently selected tab
+adding a gradient to the app with a third-party library
+
+
+
+
 make new folder called "component"
 make new file in the component folder called "MainContainer.js"
 ```js
