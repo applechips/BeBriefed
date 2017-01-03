@@ -11,7 +11,7 @@ const TabBarContainer = (props) => (
   <Tabs
 		style={styles.tabContainer}
 		selected={props.selectedService}
-		onSelect={comp=> {
+		onSelect={comp => {
 			props.onTabChange(comp.props.name)
 		}}
 	>
