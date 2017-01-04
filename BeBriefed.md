@@ -1,6 +1,12 @@
+the proper place to request data in the React rendering pipeline
+starting up a test development API server
+polling for data and incorporating it into our apps data and state 
+
+
 conditonally applying styles to a component
 visually identifying the currently selected tab
 adding a gradient to the app with a third-party library
+
 
 
 
